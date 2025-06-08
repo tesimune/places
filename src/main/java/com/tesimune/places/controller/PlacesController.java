@@ -1,24 +1,24 @@
-package com.tesimune.places.Controllers;
+package com.tesimune.places.controller;
 
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-//@RequestMapping("/places")
+@RequestMapping("/places")
 public class PlacesController {
 
-    @GetMapping("/")
+    @GetMapping()
     public String index() {
         return "Index";
+    }
+
+    @PostMapping()
+    public String store() {
+        return "Created";
     }
 
     @GetMapping("/{uuid}")
     public String show(@PathVariable String uuid) {
         return "Show " + uuid;
-    }
-
-    @PostMapping("/")
-    public String store() {
-        return "Created";
     }
 
     @PutMapping("/{uuid}")
